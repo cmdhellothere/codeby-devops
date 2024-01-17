@@ -1,0 +1,72 @@
+Script started on 2024-01-17 16:22:25+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="168" LINES="46"]
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ exitjava -versionsudo update-alternatives --config java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25Pjava -versionexit[K[Kexitjava -versionsudo update-alternatives --config java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25Pjava -versionexit[Kkill -STOP 7052[10Ptop &ps -U "ubu"[6Ptop &kill -STOP 7052exit[Kjava -versionsudo update-alternatives --config java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25Pjava -versionexit[K[Kcat [7m/etc/systemd/system/nginx.service[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/etc/systemd/system/nginx.service
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l# cmdhelloworld
+# =======================
+#
+# ExecStop sends SIGSTOP (graceful stop) to the nginx process.
+# If, after 5s (--retry QUIT/5) nginx is still running, systemd takes control
+# and sends SIGTERM (fast shutdown) to the main process.
+# After another 5s (TimeoutStopSec=5), and if nginx is alive, systemd sends
+# SIGKILL to all the remaining processes in the process group (KillMode=mixed).
+#
+# nginx signals reference doc:
+# http://nginx.org/en/docs/control.html
+#
+[Unit]
+Description=A high performance web server and a reverse proxy server (cmdhelloworld edition)
+Documentation=man:nginx(8)
+After=network.target nss-lookup.target
+
+[Service]
+Type=forking
+PIDFile=/run/nginx.pid
+ExecStartPre=/usr/sbin/nginx -t -q -g 'daemon on; master_process on;'
+ExecStart=/usr/sbin/nginx -g 'daemon on; master_process on;'
+ExecReload=/usr/sbin/nginx -g 'daemon on; master_process on;' -s reload
+ExecStop=-/sbin/start-stop-daemon --quiet --stop --retry QUIT/5 --pidfile /run/nginx.pid
+TimeoutStopSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [K]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [K]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [K]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [K]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [K]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [7m/etc/systemd/system/nginx.service[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/etc/systemd/system/nginx.service
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[7msudo systemctl enable nginx[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo systemctl enable nginx
+[?2004l[sudo] password for ubu: 
+Synchronizing state of nginx.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable nginx
+Created symlink /etc/systemd/system/multi-user.target.wants/nginx.service → /etc/systemd/system/nginx.service.
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [7msystemctl start nginx[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csystemctl start nginx
+[?2004l[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ systemctl start nginx[C[1P nginx[1P nginxt nginxu nginxs nginx
+[?2004l[?1h=[0;1;32m●[0m nginx.service - A high performance web server and a reverse proxy server (cmdhelloworld edition)[m
+     Loaded: loaded (/etc/systemd/system/nginx.service; enabled; vendor preset: enabled)[m
+     Active: [0;1;32mactive (running)[0m since Wed 2024-01-17 16:24:17 MSK; 5s ago[m
+       Docs: man:nginx(8)[m
+    Process: 8626 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[m
+    Process: 8627 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)[m
+   Main PID: 8628 (nginx)[m
+      Tasks: 9 (limit: 9339)[m
+     Memory: 7.6M[m
+        CPU: 34ms[m
+     CGroup: /system.slice/nginx.service[m
+             ├─8628 "nginx: master process /usr/sbin/nginx -g daemon on; master_process on;"[m
+             ├─8629 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+             ├─8630 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+             ├─8631 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+             ├─8632 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+             ├─8633 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+             ├─8634 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+             ├─8635 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+             └─8636 "nginx: worker process" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" "" ""[m
+[m
+янв 17 16:24:17 ubu-test systemd[1]: Starting A high performance web server and a reverse proxy server (cmdhelloworld edition)...[m
+янв 17 16:24:17 ubu-test systemd[1]: Started A high performance web server and a reverse proxy server (cmdhelloworld edition).[m
+[K[?1l>[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2024-01-17 16:24:32+03:00 [COMMAND_EXIT_CODE="0"]
