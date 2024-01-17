@@ -1,0 +1,355 @@
+Script started on 2024-01-17 15:43:32+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ exitkill -STOP 3943[10Ptop &ps -U "ubu"A[Kless /etc/passwdps -A[K
+[?2004l    PID TTY          TIME CMD
+      1 ?        00:00:01 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 rcu_gp
+      4 ?        00:00:00 rcu_par_gp
+      5 ?        00:00:00 slub_flushwq
+      6 ?        00:00:00 netns
+      8 ?        00:00:00 kworker/0:0H-events_highpri
+     10 ?        00:00:00 mm_percpu_wq
+     11 ?        00:00:00 rcu_tasks_rude_
+     12 ?        00:00:00 rcu_tasks_trace
+     13 ?        00:00:00 ksoftirqd/0
+     14 ?        00:00:03 rcu_sched
+     15 ?        00:00:00 migration/0
+     16 ?        00:00:00 idle_inject/0
+     17 ?        00:00:01 kworker/0:1-events
+     18 ?        00:00:00 cpuhp/0
+     19 ?        00:00:00 cpuhp/1
+     20 ?        00:00:00 idle_inject/1
+     21 ?        00:00:00 migration/1
+     22 ?        00:00:00 ksoftirqd/1
+     24 ?        00:00:00 kworker/1:0H-events_highpri
+     25 ?        00:00:00 cpuhp/2
+     26 ?        00:00:00 idle_inject/2
+     27 ?        00:00:00 migration/2
+     28 ?        00:00:00 ksoftirqd/2
+     30 ?        00:00:00 kworker/2:0H-events_highpri
+     31 ?        00:00:00 cpuhp/3
+     32 ?        00:00:00 idle_inject/3
+     33 ?        00:00:00 migration/3
+     34 ?        00:00:00 ksoftirqd/3
+     36 ?        00:00:00 kworker/3:0H-events_highpri
+     37 ?        00:00:00 cpuhp/4
+     38 ?        00:00:00 idle_inject/4
+     39 ?        00:00:00 migration/4
+     40 ?        00:00:00 ksoftirqd/4
+     42 ?        00:00:00 kworker/4:0H-events_highpri
+     43 ?        00:00:00 cpuhp/5
+     44 ?        00:00:00 idle_inject/5
+     45 ?        00:00:00 migration/5
+     46 ?        00:00:00 ksoftirqd/5
+     48 ?        00:00:00 kworker/5:0H-events_highpri
+     49 ?        00:00:00 cpuhp/6
+     50 ?        00:00:00 idle_inject/6
+     51 ?        00:00:00 migration/6
+     52 ?        00:00:00 ksoftirqd/6
+     54 ?        00:00:00 kworker/6:0H-events_highpri
+     55 ?        00:00:00 cpuhp/7
+     56 ?        00:00:00 idle_inject/7
+     57 ?        00:00:00 migration/7
+     58 ?        00:00:00 ksoftirqd/7
+     60 ?        00:00:00 kworker/7:0H-events_highpri
+     61 ?        00:00:00 kdevtmpfs
+     62 ?        00:00:00 inet_frag_wq
+     63 ?        00:00:01 kworker/7:1-events
+     64 ?        00:00:00 kworker/5:1-events
+     68 ?        00:00:00 kworker/1:1-events
+     70 ?        00:00:00 kauditd
+     71 ?        00:00:00 khungtaskd
+     72 ?        00:00:00 oom_reaper
+     73 ?        00:00:00 writeback
+     74 ?        00:00:00 kcompactd0
+     75 ?        00:00:00 ksmd
+     76 ?        00:00:00 khugepaged
+    122 ?        00:00:00 kintegrityd
+    123 ?        00:00:00 kblockd
+    124 ?        00:00:00 blkcg_punt_bio
+    125 ?        00:00:00 tpm_dev_wq
+    126 ?        00:00:00 ata_sff
+    127 ?        00:00:00 md
+    128 ?        00:00:00 edac-poller
+    129 ?        00:00:00 devfreq_wq
+    130 ?        00:00:00 watchdogd
+    132 ?        00:00:00 kworker/2:1H-kblockd
+    133 ?        00:00:00 kswapd0
+    134 ?        00:00:00 ecryptfs-kthrea
+    136 ?        00:00:00 kthrotld
+    137 ?        00:00:00 irq/49-ACPI:Ged
+    138 ?        00:00:00 acpi_thermal_pm
+    140 ?        00:00:00 mld
+    141 ?        00:00:00 kworker/3:1H-kblockd
+    142 ?        00:00:00 ipv6_addrconf
+    151 ?        00:00:00 kstrp
+    154 ?        00:00:00 zswap-shrink
+    155 ?        00:00:00 kworker/u17:0
+    158 ?        00:00:00 kworker/6:2-events
+    159 ?        00:00:00 cryptd
+    197 ?        00:00:00 charger_manager
+    240 ?        00:00:00 kworker/6:1H-kblockd
+    257 ?        00:00:00 hwrng
+    267 ?        00:00:00 kworker/1:1H-kblockd
+    270 ?        00:00:00 kworker/7:1H-kblockd
+    272 ?        00:00:00 kworker/4:1H-kblockd
+    277 ?        00:00:00 kworker/5:1H-kblockd
+    278 ?        00:00:00 kworker/0:1H-kblockd
+    286 ?        00:00:00 kworker/4:2-events
+    322 ?        00:00:00 kdmflush
+    352 ?        00:00:00 raid5wq
+    413 ?        00:00:00 jbd2/dm-0-8
+    414 ?        00:00:00 ext4-rsv-conver
+    437 ?        00:00:00 scsi_eh_0
+    438 ?        00:00:00 scsi_tmf_0
+    439 ?        00:00:01 usb-storage
+    441 ?        00:00:00 uas
+    494 ?        00:00:00 systemd-journal
+    524 ?        00:00:00 kaluad
+    527 ?        00:00:00 kmpath_rdacd
+    529 ?        00:00:00 kmpathd
+    530 ?        00:00:00 kmpath_handlerd
+    531 ?        00:00:01 multipathd
+    555 ?        00:00:00 systemd-udevd
+    627 ?        00:00:01 kworker/u16:3-events_unbound
+    703 ?        00:00:00 jbd2/vda2-8
+    704 ?        00:00:00 ext4-rsv-conver
+    747 ?        00:00:11 systemd-oomd
+    748 ?        00:00:00 systemd-timesyn
+    802 ?        00:00:00 systemd-network
+    804 ?        00:00:00 systemd-resolve
+    815 ?        00:00:00 avahi-daemon
+    816 ?        00:00:01 dbus-daemon
+    817 ?        00:00:00 NetworkManager
+    822 ?        00:00:00 irqbalance
+    823 ?        00:00:00 networkd-dispat
+    824 ?        00:00:01 polkitd
+    825 ?        00:00:00 power-profiles-
+    826 ?        00:00:00 rsyslogd
+    829 ?        00:00:01 snapd
+    838 ?        00:00:00 accounts-daemon
+    840 ?        00:00:00 switcheroo-cont
+    842 ?        00:00:00 systemd-logind
+    843 ?        00:00:00 udisksd
+    845 ?        00:00:00 wpa_supplicant
+    852 ?        00:00:00 avahi-daemon
+    867 ?        00:00:00 ModemManager
+    877 ?        00:00:00 cupsd
+    889 ?        00:00:00 unattended-upgr
+    917 ?        00:00:00 dbus
+    918 ?        00:00:00 kworker/3:3-events
+    924 ?        00:00:00 cups-browsed
+    927 ?        00:00:00 cron
+    936 ?        00:00:00 kerneloops
+    947 ?        00:00:00 kerneloops
+    948 ?        00:00:00 agetty
+    950 ?        00:00:00 sshd
+    952 ?        00:00:00 gdm3
+   1133 ?        00:00:02 dockerd
+   1223 ?        00:00:16 containerd
+   1397 ?        00:00:00 rtkit-daemon
+   1477 ?        00:00:00 upowerd
+   1518 ?        00:00:00 packagekitd
+   1665 ?        00:00:00 colord
+   1720 ?        00:00:01 spice-vdagentd
+   1772 ?        00:00:00 gdm-session-wor
+   1791 ?        00:00:00 systemd
+   1792 ?        00:00:00 (sd-pam)
+   1798 ?        00:00:00 pipewire
+   1799 ?        00:00:00 pipewire-media-
+   1800 ?        00:00:00 pulseaudio
+   1802 ?        00:00:00 ubuntu-report
+   1806 ?        00:00:00 dbus-daemon
+   1808 ?        00:00:00 gnome-keyring-d
+   1816 ?        00:00:00 gvfsd
+   1823 ?        00:00:00 gvfsd-fuse
+   1835 ?        00:00:00 tracker-miner-f
+   1843 ?        00:00:00 gvfs-udisks2-vo
+   1848 ?        00:00:00 gvfs-mtp-volume
+   1852 ?        00:00:00 gvfs-gphoto2-vo
+   1856 ?        00:00:00 gvfs-afc-volume
+   1861 ?        00:00:00 gvfs-goa-volume
+   1865 ?        00:00:00 goa-daemon
+   1872 ?        00:00:00 goa-identity-se
+   1880 tty2     00:00:00 gdm-wayland-ses
+   1883 tty2     00:00:00 gnome-session-b
+   1924 ?        00:00:00 gnome-session-c
+   1937 ?        00:00:00 gnome-session-b
+   1956 ?        00:00:00 at-spi-bus-laun
+   1957 ?        00:01:00 gnome-shell
+   1965 ?        00:00:00 dbus-daemon
+   1996 ?        00:00:00 xdg-permission-
+   1998 ?        00:00:00 gnome-shell-cal
+   2008 ?        00:00:00 evolution-sourc
+   2015 ?        00:00:00 evolution-calen
+   2024 ?        00:00:00 dconf-service
+   2025 ?        00:00:00 evolution-addre
+   2042 ?        00:00:00 gvfsd-trash
+   2060 ?        00:00:00 at-spi2-registr
+   2061 ?        00:00:00 gjs
+   2069 ?        00:00:00 sh
+   2070 ?        00:00:00 gsd-a11y-settin
+   2072 ?        00:00:03 ibus-daemon
+   2073 ?        00:00:00 gsd-color
+   2077 ?        00:00:00 gsd-datetime
+   2078 ?        00:00:00 gsd-housekeepin
+   2081 ?        00:00:00 gsd-keyboard
+   2090 ?        00:00:00 gsd-media-keys
+   2091 ?        00:00:00 gsd-power
+   2092 ?        00:00:00 gsd-print-notif
+   2096 ?        00:00:00 gsd-rfkill
+   2098 ?        00:00:00 gsd-screensaver
+   2100 ?        00:00:00 gsd-sharing
+   2101 ?        00:00:00 gsd-smartcard
+   2103 ?        00:00:00 gsd-sound
+   2104 ?        00:00:00 gsd-wacom
+   2125 ?        00:00:00 ibus-dconf
+   2143 ?        00:00:01 ibus-extension-
+   2144 ?        00:00:00 spice-vdagent
+   2151 ?        00:00:00 ibus-portal
+   2178 ?        00:00:00 Xwayland
+   2189 ?        00:00:01 ibus-engine-sim
+   2200 ?        00:00:00 gsd-printer
+   2219 ?        00:00:00 xdg-desktop-por
+   2227 ?        00:00:00 xdg-document-po
+   2233 ?        00:00:00 fusermount3
+   2237 ?        00:00:00 xdg-desktop-por
+   2260 ?        00:00:00 gjs
+   2266 ?        00:00:00 gsd-xsettings
+   2285 ?        00:00:00 xdg-desktop-por
+   2313 ?        00:00:00 ibus-x11
+   2329 ?        00:00:00 evolution-alarm
+   2332 ?        00:00:00 gsd-disk-utilit
+   2414 ?        00:00:00 gvfsd-metadata
+   2447 ?        00:00:00 update-notifier
+   2604 ?        00:00:00 kworker/6:0-events
+   2620 ?        00:00:13 gnome-terminal-
+   2638 pts/0    00:00:00 bash
+   2649 ?        00:00:00 kworker/2:0-events
+   3703 ?        00:00:00 kworker/3:0
+   3786 ?        00:00:00 kworker/4:1-events
+   3822 ?        00:00:00 gjs
+   3895 ?        00:00:00 kworker/u16:2-events_unbound
+   3997 ?        00:00:00 kworker/2:2-cgroup_destroy
+   4037 ?        00:00:00 kworker/0:0-events
+   4040 ?        00:00:00 kworker/1:0-events
+   5568 ?        00:00:00 kworker/u16:0-events_unbound
+   5670 ?        00:00:17 firefox
+   5922 ?        00:00:00 Socket Process
+   5985 ?        00:00:00 Privileged Cont
+   6023 ?        00:00:00 snap
+   6173 ?        00:00:00 WebExtensions
+   6453 ?        00:00:00 Utility Process
+   6457 ?        00:00:03 Isolated Web Co
+   6469 ?        00:00:00 Isolated Web Co
+   6534 ?        00:00:00 Web Content
+   6560 ?        00:00:00 Web Content
+   6635 ?        00:00:00 kworker/5:2
+   6656 ?        00:00:00 kworker/7:0-events
+   6666 ?        00:00:00 Web Content
+   6972 ?        00:00:00 kworker/0:2-events
+   6985 ?        00:00:00 kworker/1:2-events
+   7005 pts/0    00:00:00 script
+   7006 pts/1    00:00:00 bash
+   7047 pts/1    00:00:00 ps
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ ps -A[1Pexitkill -STOP 3943[10Ptop &ps -U "ubu"
+[?2004l    PID TTY          TIME CMD
+   1791 ?        00:00:00 systemd
+   1792 ?        00:00:00 (sd-pam)
+   1798 ?        00:00:00 pipewire
+   1799 ?        00:00:00 pipewire-media-
+   1800 ?        00:00:00 pulseaudio
+   1802 ?        00:00:00 ubuntu-report
+   1806 ?        00:00:00 dbus-daemon
+   1808 ?        00:00:00 gnome-keyring-d
+   1816 ?        00:00:00 gvfsd
+   1823 ?        00:00:00 gvfsd-fuse
+   1835 ?        00:00:00 tracker-miner-f
+   1843 ?        00:00:00 gvfs-udisks2-vo
+   1848 ?        00:00:00 gvfs-mtp-volume
+   1852 ?        00:00:00 gvfs-gphoto2-vo
+   1856 ?        00:00:00 gvfs-afc-volume
+   1861 ?        00:00:00 gvfs-goa-volume
+   1865 ?        00:00:00 goa-daemon
+   1872 ?        00:00:00 goa-identity-se
+   1880 tty2     00:00:00 gdm-wayland-ses
+   1883 tty2     00:00:00 gnome-session-b
+   1924 ?        00:00:00 gnome-session-c
+   1937 ?        00:00:00 gnome-session-b
+   1956 ?        00:00:00 at-spi-bus-laun
+   1957 ?        00:01:01 gnome-shell
+   1965 ?        00:00:00 dbus-daemon
+   1996 ?        00:00:00 xdg-permission-
+   1998 ?        00:00:00 gnome-shell-cal
+   2008 ?        00:00:00 evolution-sourc
+   2015 ?        00:00:00 evolution-calen
+   2024 ?        00:00:00 dconf-service
+   2025 ?        00:00:00 evolution-addre
+   2042 ?        00:00:00 gvfsd-trash
+   2060 ?        00:00:00 at-spi2-registr
+   2061 ?        00:00:00 gjs
+   2069 ?        00:00:00 sh
+   2070 ?        00:00:00 gsd-a11y-settin
+   2072 ?        00:00:03 ibus-daemon
+   2073 ?        00:00:00 gsd-color
+   2077 ?        00:00:00 gsd-datetime
+   2078 ?        00:00:00 gsd-housekeepin
+   2081 ?        00:00:00 gsd-keyboard
+   2090 ?        00:00:00 gsd-media-keys
+   2091 ?        00:00:00 gsd-power
+   2092 ?        00:00:00 gsd-print-notif
+   2096 ?        00:00:00 gsd-rfkill
+   2098 ?        00:00:00 gsd-screensaver
+   2100 ?        00:00:00 gsd-sharing
+   2101 ?        00:00:00 gsd-smartcard
+   2103 ?        00:00:00 gsd-sound
+   2104 ?        00:00:00 gsd-wacom
+   2125 ?        00:00:00 ibus-dconf
+   2143 ?        00:00:01 ibus-extension-
+   2144 ?        00:00:00 spice-vdagent
+   2151 ?        00:00:00 ibus-portal
+   2178 ?        00:00:00 Xwayland
+   2189 ?        00:00:01 ibus-engine-sim
+   2200 ?        00:00:00 gsd-printer
+   2219 ?        00:00:00 xdg-desktop-por
+   2227 ?        00:00:00 xdg-document-po
+   2233 ?        00:00:00 fusermount3
+   2237 ?        00:00:00 xdg-desktop-por
+   2260 ?        00:00:00 gjs
+   2266 ?        00:00:00 gsd-xsettings
+   2285 ?        00:00:00 xdg-desktop-por
+   2313 ?        00:00:00 ibus-x11
+   2329 ?        00:00:00 evolution-alarm
+   2332 ?        00:00:00 gsd-disk-utilit
+   2414 ?        00:00:00 gvfsd-metadata
+   2447 ?        00:00:00 update-notifier
+   2620 ?        00:00:13 gnome-terminal-
+   2638 pts/0    00:00:00 bash
+   3822 ?        00:00:00 gjs
+   5670 ?        00:00:17 firefox
+   5922 ?        00:00:00 Socket Process
+   5985 ?        00:00:00 Privileged Cont
+   6023 ?        00:00:00 snap
+   6173 ?        00:00:00 WebExtensions
+   6453 ?        00:00:00 Utility Process
+   6457 ?        00:00:03 Isolated Web Co
+   6469 ?        00:00:00 Isolated Web Co
+   6534 ?        00:00:00 Web Content
+   6560 ?        00:00:00 Web Content
+   6666 ?        00:00:00 Web Content
+   7005 pts/0    00:00:00 script
+   7006 pts/1    00:00:00 bash
+   7050 pts/1    00:00:00 ps
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ ps -U "ubu"A[K[1Pexitkill -STOP 3943[10Ptop &ps -U "ubu"[6Ptop &
+[?2004l[1] 7052
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [?1l>top &ps -U "ubu"A[K[1Pexitkill -STOP 3943[10Ptop &ps -U "ubu"[6Ptop &kill -STOP 3943[K[K[K[K7052
+[?2004l
+[1]+  Stopped                 top
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ exit
+[?2004lexit
+There are stopped jobs.
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ exit
+[?2004lexit
+[?1l>
+
+Script done on 2024-01-17 15:44:52+03:00 [COMMAND_EXIT_CODE="1"]

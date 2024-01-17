@@ -1,0 +1,25 @@
+Script started on 2024-01-17 15:45:41+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ exitkill -STOP 7052[10Ptop &ps -U "ubu"A[K[1Pexitkill -STOP 3943[10Ptop &ps -U "ubu"A[Kless /etc/passwdhtop[Kcat /proc/cpuinfolsmod[Ksystemctl list-units[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Khostname[4Pexitsystemctl list-units[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Khostnamectlsudo nano /etc/hostname[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Phostnamectlsudo nano /etc/hostname[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Phostnamectl[K[4Pexitsystemctl list-units[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clsmod[Kcat /proc/cpuinfohtop[Kless /etc/passwdps -A[KU "ubu"[6Ptop &kill -STOP 3943exit[Kps -AU "ubu"[6Ptop &kill -STOP 7052exit[K[Kjava-[K -version
+[?2004lopenjdk version "19.0.2" 2023-01-17
+OpenJDK Runtime Environment (build 19.0.2+7-Ubuntu-0ubuntu322.04)
+OpenJDK 64-Bit Server VM (build 19.0.2+7-Ubuntu-0ubuntu322.04, mixed mode, sharing)
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ [7msudo update-alternatives --config java[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csudo update-alternatives --config java
+[?2004l[sudo] password for ubu: 
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-19-openjdk-arm64/bin/java      1911      auto mode
+  1            /usr/lib/jvm/java-19-openjdk-arm64/bin/java      1911      manual mode
+  2            /usr/lib/jvm/java-8-openjdk-arm64/jre/bin/java   1081      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 2
+update-alternatives: using /usr/lib/jvm/java-8-openjdk-arm64/jre/bin/java to provide /usr/bin/java (java) in manual mode
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ sudo update-alternatives --config java[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[25Pjava -version
+[?2004lopenjdk version "1.8.0_392"
+OpenJDK Runtime Environment (build 1.8.0_392-8u392-ga-1~22.04-b08)
+OpenJDK 64-Bit Server VM (build 25.392-b08, mixed mode)
+[?2004h]0;ubu@ubu-test: ~[01;32mubu@ubu-test[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2024-01-17 15:46:57+03:00 [COMMAND_EXIT_CODE="0"]
