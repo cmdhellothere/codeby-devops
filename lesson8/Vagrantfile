@@ -1,0 +1,30 @@
+Vagrant.configure("2") do |config|
+config.vm.define "server" do |server|
+
+    server.vm.box = "sloopstash/ubuntu-22-04"
+    server.vm.network "private_network", ip: "192.168.201.21"
+    server.vm.hostname = "server"
+    server.vm.provider "vmware_fusion" do |vb| 
+       vb.vmx["memsize"] = "4048"
+       vb.vmx["numvcpus"] = "2"
+      end
+    server.vm.provision "shell", path: "./script/serv.sh"
+  end
+
+ config.vm.define "client" do |client|
+
+    client.vm.box = "sloopstash/ubuntu-22-04"
+    client.vm.network "private_network", ip: "192.168.201.20"
+    client.vm.hostname = "client"
+    client.vm.provider "vmware_fusion" do |vb| 
+       vb.vmx["memsize"] = "4048"
+       vb.vmx["numvcpus"] = "2"
+      end
+    client.vm.provision "shell", path: "./script/client.sh"
+    end
+end
+
+
+ 
+
+
