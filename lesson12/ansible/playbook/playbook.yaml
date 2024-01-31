@@ -1,0 +1,28 @@
+---
+- name: Packets install
+  hosts: all
+  remote_user: vagrant
+  vars:
+    list_of_packages:
+      - wget
+      - htop
+      - nginx
+
+  tasks:
+ 
+    - name: "Update all packages"
+      ansible.builtin.apt:
+        update_cache: yes
+      become: true
+      become_method: sudo
+
+    - name: "Installing Packages"
+      ansible.builtin.apt:
+        name: "{{ item }}"
+      become: true
+      become_method: sudo
+      loop: "{{ list_of_packages }}"
+    
+    - name: "Print debug"
+      ansible.builtin.debug:
+       msg: "This host is in {{ env }} environment"
