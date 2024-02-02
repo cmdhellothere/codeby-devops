@@ -1,0 +1,4 @@
+[web]
+webserv ansible_host=192.168.201.20
+[web:vars]
+env=dev
