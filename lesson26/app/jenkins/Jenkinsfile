@@ -10,11 +10,11 @@ pipeline {
 }
 
     stages {
-        stage('checkout') {
-            steps {
-                git branch: 'main', changelog: false, poll: false, url: env.GITHUB_URL
-            }
-        }
+        //stage('checkout') {
+          //  steps {
+            //    git branch: 'main', changelog: false, poll: false, url: env.GITHUB_URL
+           // }
+       // }
         stage('Build') {
             steps {
                 dir('lesson26/app') {
