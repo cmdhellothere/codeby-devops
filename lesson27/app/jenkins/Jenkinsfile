@@ -1,0 +1,168 @@
+pipeline {
+    agent {
+        docker {
+            image 'maven:3.9.0'
+            args '-v /root/.m2:/root/.m2'
+        }
+    }
+    environment {
+    GITHUB_URL = "https://github.com/cmdhellothere/codeby-devops.git"
+}
+
+    stages {
+        stage('Parallel Stage') {
+
+            failFast true
+            parallel {
+                stage('Word') {
+
+                    stages {
+                        stage('Build') {
+                            steps {
+                                dir ('lesson27/app') {
+                                    sh 'mvn -B -DskipTast clean package'
+                                }
+                            }
+                        }
+                        stage('Test') {
+                            steps {
+                                dir('lesson27/app') {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit 'lesson27/app/target/surefire-reports/*.xml'
+                                }
+                            }
+                        }
+                        stage('SonarQube Analysis') {
+                            steps {
+                                dir('lesson27/app') {
+                                    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarServer') {
+                                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven'"
+                                    }
+                                }
+                            }
+                        }
+                        stage('SonarQube Quality Gate') {
+                            steps {
+                                    sleep 60
+                                    waitForQualityGate abortPipeline: true
+                            }
+                        }
+                        stage('Deliver') {
+                            steps {
+                                sh 'chmod +x lesson27/app/jenkins/scripts/deliver.sh'
+                            }
+                        }
+                        stage('Cmdhello') {
+                            steps {
+                                echo "Hello Word!!!"
+                            }
+                        }
+                    }
+                }
+                stage('Jenkins') {
+
+                    stages {
+                        stage('Build') {
+                            steps {
+                                dir ('lesson27/app2') {
+                                    sh 'mvn -B -DskipTast clean package'
+                                }
+                            }
+                        }
+                        stage('Test') {
+                            steps {
+                                dir('lesson27/app2') {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit 'lesson27/app2/target/surefire-reports/*.xml'
+                                }
+                            }
+                        }
+                        stage('SonarQube Analysis') {
+                            steps {
+                                dir('lesson27/app2') {
+                                    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarServer') {
+                                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven'"
+                                    }
+                                }
+                            }
+                        }
+                        stage('SonarQube Quality Gate') {
+                            steps {
+                                    sleep 60
+                                    waitForQualityGate abortPipeline: true
+                            }
+                        }
+                        stage('Deliver') {
+                            steps {
+                                sh 'chmod +x lesson27/app2/jenkins/scripts/deliver.sh'
+                            }
+                        }
+                        stage('Cmdhello') {
+                            steps {
+                                echo "Hello Jenkins!!!"
+                            }
+                        }
+                    }
+                }
+                
+                stage('DevOps') {
+
+                    stages {
+                        stage('Build') {
+                            steps {
+                                dir ('lesson27/app3') {
+                                    sh 'mvn -B -DskipTast clean package'
+                                }
+                            }
+                        }
+                        stage('Test') {
+                            steps {
+                                dir('lesson27/app3') {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit 'lesson27/app3/target/surefire-reports/*.xml'
+                                }
+                            }
+                        }
+                        stage('SonarQube Analysis') {
+                            steps {
+                                dir('lesson27/app3') {
+                                    withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarServer') {
+                                        sh "mvn clean verify sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven'"
+                                    }
+                                }
+                            }
+                        }
+                        stage('SonarQube Quality Gate') {
+                            steps {
+                                    sleep 60
+                                    waitForQualityGate abortPipeline: true
+                            }
+                        }
+                        stage('Deliver') {
+                            steps {
+                                sh 'chmod +x lesson27/app3/jenkins/scripts/deliver.sh'
+                            }
+                        }
+                        stage('Cmdhello') {
+                            steps {
+                                echo "Hello DevOps!!!"
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    }
+}
