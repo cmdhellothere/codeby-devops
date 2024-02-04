@@ -19,26 +19,26 @@ pipeline {
                     stages {
                         stage('Build') {
                             steps {
-                                dir ('lesson26/app') {
+                                dir ('lesson27/app') {
                                     sh 'mvn -B -DskipTast clean package'
                                 }
                             }
                         }
                         stage('Test') {
                             steps {
-                                dir('lesson26/app') {
+                                dir('lesson27/app') {
                                     sh 'mvn test'
                                 }
                             }
                             post {
                                 always {
-                                    junit 'lesson26/app/target/surefire-reports/*.xml'
+                                    junit 'lesson27/app/target/surefire-reports/*.xml'
                                 }
                             }
                         }
                         stage('SonarQube Analysis') {
                             steps {
-                                dir('lesson26/app') {
+                                dir('lesson27/app') {
                                     withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarServer') {
                                         sh "mvn clean verify sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven'"
                                     }
@@ -53,7 +53,7 @@ pipeline {
                         }
                         stage('Deliver') {
                             steps {
-                                sh 'chmod +x lesson26/app/jenkins/scripts/deliver.sh'
+                                sh 'chmod +x lesson27/app/jenkins/scripts/deliver.sh'
                             }
                         }
                         stage('Cmdhello') {
@@ -68,26 +68,26 @@ pipeline {
                     stages {
                         stage('Build') {
                             steps {
-                                dir ('lesson26/app2') {
+                                dir ('lesson27/app2') {
                                     sh 'mvn -B -DskipTast clean package'
                                 }
                             }
                         }
                         stage('Test') {
                             steps {
-                                dir('lesson26/app2') {
+                                dir('lesson27/app2') {
                                     sh 'mvn test'
                                 }
                             }
                             post {
                                 always {
-                                    junit 'lesson26/app2/target/surefire-reports/*.xml'
+                                    junit 'lesson27/app2/target/surefire-reports/*.xml'
                                 }
                             }
                         }
                         stage('SonarQube Analysis') {
                             steps {
-                                dir('lesson26/app2') {
+                                dir('lesson27/app2') {
                                     withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarServer') {
                                         sh "mvn clean verify sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven'"
                                     }
@@ -102,7 +102,7 @@ pipeline {
                         }
                         stage('Deliver') {
                             steps {
-                                sh 'chmod +x lesson26/app2/jenkins/scripts/deliver.sh'
+                                sh 'chmod +x lesson27/app2/jenkins/scripts/deliver.sh'
                             }
                         }
                         stage('Cmdhello') {
@@ -118,26 +118,26 @@ pipeline {
                     stages {
                         stage('Build') {
                             steps {
-                                dir ('lesson26/app3') {
+                                dir ('lesson27/app3') {
                                     sh 'mvn -B -DskipTast clean package'
                                 }
                             }
                         }
                         stage('Test') {
                             steps {
-                                dir('lesson26/app3') {
+                                dir('lesson27/app3') {
                                     sh 'mvn test'
                                 }
                             }
                             post {
                                 always {
-                                    junit 'lesson26/app3/target/surefire-reports/*.xml'
+                                    junit 'lesson27/app3/target/surefire-reports/*.xml'
                                 }
                             }
                         }
                         stage('SonarQube Analysis') {
                             steps {
-                                dir('lesson26/app3') {
+                                dir('lesson27/app3') {
                                     withSonarQubeEnv(credentialsId: 'sonar', installationName: 'SonarServer') {
                                         sh "mvn clean verify sonar:sonar -Dsonar.projectKey=maven -Dsonar.projectName='maven'"
                                     }
@@ -152,7 +152,7 @@ pipeline {
                         }
                         stage('Deliver') {
                             steps {
-                                sh 'chmod +x lesson26/app3/jenkins/scripts/deliver.sh'
+                                sh 'chmod +x lesson27/app3/jenkins/scripts/deliver.sh'
                             }
                         }
                         stage('Cmdhello') {
