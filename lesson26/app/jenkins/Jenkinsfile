@@ -10,36 +10,113 @@ pipeline {
 }
 
     stages {
-        //stage('checkout') {
-          //  steps {
-            //    git branch: 'main', changelog: false, poll: false, url: env.GITHUB_URL
-           // }
-       // }
-        stage('Build') {
-            steps {
-                dir('lesson26/app') {
-                    sh 'mvn -B -DskipTests clean package'
+        stage('Parallel Stage') {
+
+            failFast true
+            parallel {
+                stage('Word') {
+
+                    stages {
+                        stage('Build') {
+                            steps {
+                                dir ('lesson26/app') {
+                                    sh 'mvn -B -DskipTast clean package'
+                                }
+                            }
+                        }
+                        stage('Test') {
+                            steps {
+                                dir('lesson26/app') {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit 'lesson26/app/target/surefire-reports/*.xml'
+                                }
+                            }
+                        }
+                        stage('Deliver') {
+                            steps {
+                                sh 'chmod +x lesson26/app/jenkins/scripts/deliver.sh'
+                            }
+                        }
+                        stage('Cmdhello') {
+                            steps {
+                                echo "Hello Word!!!"
+                            }
+                        }
                     }
+                }
+                stage('Jenkins') {
+
+                    stages {
+                        stage('Build') {
+                            steps {
+                                dir ('lesson26/app2') {
+                                    sh 'mvn -B -DskipTast clean package'
+                                }
+                            }
+                        }
+                        stage('Test') {
+                            steps {
+                                dir('lesson26/app2') {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit 'lesson26/app2/target/surefire-reports/*.xml'
+                                }
+                            }
+                        }
+                        stage('Deliver') {
+                            steps {
+                                sh 'chmod +x lesson26/app2/jenkins/scripts/deliver.sh'
+                            }
+                        }
+                        stage('Cmdhello') {
+                            steps {
+                                echo "Hello Jenkins!!!"
+                            }
+                        }
+                    }
+                }
                 
-            }
-        }
-        stage('Test') {
-            steps {
-                dir('lesson26/app') {
-                sh 'mvn test'
+                stage('DevOps') {
+
+                    stages {
+                        stage('Build') {
+                            steps {
+                                dir ('lesson26/app3') {
+                                    sh 'mvn -B -DskipTast clean package'
+                                }
+                            }
+                        }
+                        stage('Test') {
+                            steps {
+                                dir('lesson26/app3') {
+                                    sh 'mvn test'
+                                }
+                            }
+                            post {
+                                always {
+                                    junit 'lesson26/app3/target/surefire-reports/*.xml'
+                                }
+                            }
+                        }
+                        stage('Deliver') {
+                            steps {
+                                sh 'chmod +x lesson26/app3/jenkins/scripts/deliver.sh'
+                            }
+                        }
+                        stage('Cmdhello') {
+                            steps {
+                                echo "Hello DevOps!!!"
+                            }
+                        }
+                    }
                 }
             }
-            post {
-                always {
-                    junit 'lesson26/app/target/surefire-reports/*.xml'
-                }
-            }
-        }
-        stage('Deliver') {
-            steps {
-                sh 'chmod +x lesson26/app/jenkins/scripts/deliver.sh'
-                sh './lesson26/app/jenkins/scripts/deliver.sh'
-            }
-        }
     }
 }
